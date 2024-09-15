@@ -51,6 +51,7 @@ export class AppController {
         }
         return;
       }
+
       response.status(400).send('Account name mismatch');
     } catch (error) {
       response.status(400).send("Invalid user's credentials");

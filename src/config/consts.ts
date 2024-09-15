@@ -1,6 +1,12 @@
-export const DEVOPS_URL =
-  process.env.DEVOPS_URL ??
-  'https://devops.truesight.asia:7443/DefaultCollection/';
+import { config } from 'dotenv';
+
+config();
+
+export const DEVOPS_URL = process.env.DEVOPS_URL;
+
+if (!DEVOPS_URL) {
+  throw new Error('DEVOPS_URL is not defined');
+}
 
 export const DEVOPS_DOMAIN = process.env.DEVOPS_DOMAIN ?? 'DEVOPS';
 
